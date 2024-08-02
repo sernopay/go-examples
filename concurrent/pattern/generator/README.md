@@ -1,6 +1,6 @@
 # Generator
 Generator: functions that returns a channel. Channels are first-class values, just like strings or integers.
-```
+```go
 func boring(msg string) chan string {
     c := make(chan string)
     ...
@@ -11,7 +11,7 @@ func boring(msg string) chan string {
 Our boring function returns a channel that lets us communicate with the boring service it provides.
 
 We can have more instances of the service.
-```
+```go
 joe := boring("Joe")
 ann := boring("Ann")
 ```

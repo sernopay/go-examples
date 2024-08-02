@@ -18,7 +18,7 @@ The previous example has the following structure: :
 ```
 
 and here is the code of greetings.go
-```
+```go
 package greetings
 
 import (

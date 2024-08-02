@@ -15,7 +15,7 @@ Assuming it has the following folder structure:
 ```
 
 After you run the command, the go.mod file in the hello directory should include a replace directive
-```
+```go
 module example.com/hello
 
 go 1.16
