@@ -23,7 +23,7 @@ if s, ok := i.(string); ok {
 ## Running the Program
 To run the program, use the following command:
 ```bash
-go run assertsion.go
+go run assertion.go
 ```
 This will output:
 ```
