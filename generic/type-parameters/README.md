@@ -2,7 +2,7 @@
 This example demonstrates how to use type parameters in Go. In this example, we will create an `Index` function that returns the index of an element in a slice of any type. If the element is not found, the function will return -1.
 
 ## About Type Parameters
-Type parameters allow you to define functions, methods, that can work with any type. This is useful when you want to write generic code that can be used with different types without having to duplicate the code for each type. The type parameters of a function appear between brackets before the function's arguments. For example
+Type parameters allow you to define functions, methods, that can work with any type. Or we can call it generic functions. This is useful when you want to write generic code that can be used with different types without having to duplicate the code for each type. The type parameters of a function appear between brackets before the function's arguments. For example
 ```go
 func Index[T comparable](list []T, val T) int
 ```
