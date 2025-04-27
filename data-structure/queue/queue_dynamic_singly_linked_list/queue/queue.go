@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package queue
 
 type node[T any] struct {
 	value T
@@ -55,17 +53,6 @@ func (q *queue[T]) IsEmpty() bool {
 	return q.count == 0
 }
 
-func main() {
-	q := New[int]()
-	q.Add(1)
-	q.Add(2)
-	q.Add(3)
-
-	fmt.Println(q)
-
-	fmt.Println(q.Poll())
-	fmt.Println(q.Poll())
-	fmt.Println(q.Poll())
-
-	fmt.Println(q.Poll())
+func (q *queue[T]) Size() int {
+	return q.count
 }
