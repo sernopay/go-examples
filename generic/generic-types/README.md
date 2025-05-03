@@ -6,13 +6,11 @@
 * Learn how to define and use generic types in Go.
 
 ## About Generic Types
-A type can be parameterized with a type parameter, which could be useful for implementing generic data structures. For example, a generic stack.
+Generics were introduced in Go 1.18, allowing developers to write code that can work with any data type. This means you can create functions and data structures that are not limited to a specific type, making your code more flexible and reusable. Generic types are defined using type parameters, which are placeholders for the actual types that will be used when the code is executed.
 
 ### Why Use Generics?
 * Generics allow you to write code that is more flexible and reusable. Instead of writing separate implementations for each type, you can write a single implementation that works with any type. Therefore, you can avoid code duplication and make your code more maintainable.
 * Generics also provide type safety. When you use a generic type, the compiler checks that the types you use are compatible with the operations you perform on them. This helps to catch errors at compile time rather than runtime.
-
-
 
 ## Code Explanation
 
@@ -45,7 +43,7 @@ func (s *Stack[T]) IsEmpty() bool {
 ```
 * We define a generic `Stack` type using a type parameter `T`. T can be any type, including built-in types like `int`, `string`, or user-defined types. The `Stack` struct contains a slice of elements of type `T`. 
 * The `Push` method adds an element to the stack. It appends the element to the `elements` slice.
-* The `Peek` method returns the top element of the stack without removing it. It returns the top element and a boolean value indicating whether the stack is empty.
+* The `Peek` method returns the top element of the stack without removing it. It returns the top element and a boolean indicating whether the operation was successful. If the stack is empty, it returns a zero value of type `T` and `false`.
 
 ### main function
 The `main` function demonstrates the usage of the generic `Stack` type.
