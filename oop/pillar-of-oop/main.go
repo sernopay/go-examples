@@ -4,7 +4,7 @@ import "fmt"
 
 // Abstraction
 
-// DocumentPrinter is the "abstract class" that defines the general behavior of a document printer.
+// documentPrinter is the "abstract class" that defines the general behavior of a document printer.
 // This struct should not be instantiated directly, but should be "extended" by concrete types.
 type documentPrinter struct {
 	content string
