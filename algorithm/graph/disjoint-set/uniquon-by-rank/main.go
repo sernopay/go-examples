@@ -4,6 +4,7 @@ import "fmt"
 
 type unionFind struct {
 	root []int
+	rank []int
 }
 
 func (u *unionFind) Find(x int) int {
@@ -16,8 +17,16 @@ func (u *unionFind) Find(x int) int {
 func (u *unionFind) Union(x, y int) {
 	rootX := u.Find(x)
 	rootY := u.Find(y)
-	if rootX != rootY {
-		u.root[rootY] = u.root[rootX]
+	if rootX == rootY {
+		return
+	}
+	if u.rank[rootX] > u.rank[rootY] {
+		u.root[rootY] = rootX
+	} else if u.rank[rootX] < u.rank[rootY] {
+		u.root[rootX] = rootY
+	} else {
+		u.root[rootY] = rootX
+		u.rank[rootX] += 1
 	}
 }
 
@@ -28,10 +37,14 @@ func (u *unionFind) Connected(x, y int) bool {
 func NewUnionFind(size int) *unionFind {
 	uf := &unionFind{
 		root: make([]int, size),
+		rank: make([]int, size),
 	}
+
 	for i := range uf.root {
 		uf.root[i] = i
+		uf.rank[i] = i
 	}
+
 	return uf
 }
 
